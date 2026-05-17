@@ -82,8 +82,8 @@ def main():
     print("[VIZ] Generating decision tree visualization...")
 
     # Premium dark theme
-    # Premium dark theme (Slate)
-    bg_color = '#0F172A'
+    # Premium dark theme (Deep Space)
+    bg_color = '#0B0F19'
     matplotlib.rcParams.update({
         'figure.facecolor': bg_color,
         'axes.facecolor': bg_color,
@@ -161,11 +161,11 @@ def main():
         fontsize=28, fontweight='black', color='#F8FAFC', y=0.97
     )
 
-    # Subtitle
+    # Subtitle with very high contrast Sky Blue
     fig.text(
         0.5, 0.93,
         f'max_depth = 3  |  Accuracy = {accuracy:.2%}  |  UCI Bank Marketing Dataset  |  {df.shape[0]} samples',
-        ha='center', fontsize=14, color='#94A3B8', style='italic'
+        ha='center', fontsize=15, color='#38BDF8', style='italic', fontweight='bold'
     )
 
     plt.tight_layout(rect=[0, 0, 1, 0.92])
