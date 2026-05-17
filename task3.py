@@ -82,8 +82,8 @@ def main():
     print("[VIZ] Generating decision tree visualization...")
 
     # Premium dark theme
-    # Premium dark theme (Deep Space)
-    bg_color = '#0B0F19'
+    # Premium dark theme (Slate-900)
+    bg_color = '#111827'
     matplotlib.rcParams.update({
         'figure.facecolor': bg_color,
         'axes.facecolor': bg_color,
@@ -158,17 +158,18 @@ def main():
     # Title
     fig.suptitle(
         'Decision Tree Classifier — Bank Term Deposit Prediction',
-        fontsize=28, fontweight='black', color='#F8FAFC', y=0.97
+        fontsize=30, fontweight='black', color='#FFFFFF', y=0.98
     )
 
     # Subtitle with very high contrast Sky Blue
     fig.text(
-        0.5, 0.93,
+        0.5, 0.92,
         f'max_depth = 3  |  Accuracy = {accuracy:.2%}  |  UCI Bank Marketing Dataset  |  {df.shape[0]} samples',
-        ha='center', fontsize=15, color='#38BDF8', style='italic', fontweight='bold'
+        ha='center', fontsize=16, color='#38BDF8', style='italic', fontweight='bold'
     )
 
-    plt.tight_layout(rect=[0, 0, 1, 0.92])
+    # Leave more space at the top so the tree doesn't overlap the titles
+    plt.tight_layout(rect=[0, 0, 1, 0.89])
 
     output_file = 'decision_tree_model.png'
     fig.savefig(output_file, dpi=300, bbox_inches='tight', facecolor=bg_color, edgecolor='none')
