@@ -1,0 +1,24 @@
+🌳 Task 3 Complete — Decision Tree Classifier for Bank Marketing Prediction | SCT_DS_3
+
+Excited to share the completion of my third task at SkillCraft Technology as a Data Science Intern!
+
+🎯 Objective: Build a Decision Tree Classifier to predict whether a bank client will subscribe to a term deposit based on their demographic and behavioral data.
+
+📊 Dataset: UCI Bank Marketing Dataset — 4,521 real-world records from direct marketing campaigns of a Portuguese banking institution.
+
+🔧 What I Did:
+• Preprocessed the dataset using one-hot encoding for all categorical variables
+• Split the data into 70/30 train/test sets for robust evaluation
+• Trained a DecisionTreeClassifier (max_depth=3) for an interpretable, production-ready model
+• Evaluated performance with accuracy scoring and a full classification report
+• Visualized the decision tree to understand the key factors driving predictions
+
+💡 Key Takeaway: Decision trees offer incredible interpretability — you can trace exactly how the model makes each prediction. Features like call duration, previous campaign outcome, and contact month emerged as the most influential factors in predicting customer behavior.
+
+🛠️ Tech Stack: Python | pandas | scikit-learn | matplotlib
+
+This project reinforced my understanding of the full ML pipeline — from data preprocessing and feature encoding to model training, evaluation, and visualization.
+
+Grateful to SkillCraft Technology for this hands-on learning opportunity!
+
+#DataScience #MachineLearning #DecisionTree #Python #ScikitLearn #SkillCraftTechnology #Internship #UCI #BankMarketing #SCT_DS_3
