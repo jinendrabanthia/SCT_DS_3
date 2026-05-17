@@ -92,18 +92,49 @@ def main():
 
     fig, ax = plt.subplots(figsize=(28, 12))
 
-    # Draw the tree
-    plot_tree(
+    # Draw the tree with transparent background to customize manually
+    tree_artists = plot_tree(
         clf,
         feature_names=X_encoded.columns.tolist(),
         class_names=['No', 'Yes'],
-        filled=True,
+        filled=False,
         rounded=True,
-        fontsize=10,
+        fontsize=12,
         proportion=True,
         impurity=True,
         ax=ax
     )
+
+    # Customize node colors for maximum visibility and a premium neon look
+    for artist in tree_artists:
+        text = artist.get_text()
+        
+        # Default styling for nodes
+        facecolor = '#161B22'
+        edgecolor = '#8B949E'
+        textcolor = '#FFFFFF'
+
+        # Highlight Yes (Success) nodes with Neon Cyan
+        if 'class = Yes' in text:
+            edgecolor = '#00E5FF'
+            facecolor = '#002B36'
+            
+        # Highlight No (Failure) nodes with Neon Pink
+        elif 'class = No' in text:
+            edgecolor = '#FF3366'
+            facecolor = '#3B0018'
+        
+        # Apply text styling
+        artist.set_color(textcolor)
+        artist.set_fontweight('bold')
+        
+        # Apply box styling
+        bbox = artist.get_bbox_patch()
+        if bbox is not None:
+            bbox.set_facecolor(facecolor)
+            bbox.set_edgecolor(edgecolor)
+            bbox.set_linewidth(3)
+            bbox.set_boxstyle("round,pad=0.6")
 
     # Title
     fig.suptitle(
